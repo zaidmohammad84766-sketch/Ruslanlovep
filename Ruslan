@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOVE.EXE ❤️</title>
+
+<style>
+body {
+    background: #050505;
+    color: #00ff9c;
+    font-family: monospace;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.box {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 25px;
+    border: 1px solid #00ff9c;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ff9c44;
+}
+
+h1 {
+    text-shadow: 0 0 10px #00ff9c;
+}
+
+button {
+    background: transparent;
+    color: #00ff9c;
+    border: 1px solid #00ff9c;
+    padding: 12px 20px;
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+#message {
+    line-height: 2;
+    margin: 25px 0;
+}
+
+#final {
+    display: none;
+    color: #ff3366;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.heart {
+    font-size: 60px;
+    animation: beat 0.8s infinite alternate;
+}
+
+@keyframes beat {
+    to { transform: scale(1.2); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>SYSTEM OVERRIDE: LOVE.EXE</h1>
+
+<div id="message">
+Initializing secret protocol...
+</div>
+
+<button id="btn" onclick="startLove()">
+INITIATE SCAN ❤️
+</button>
+
+<div id="final">
+<div class="heart">❤️</div>
+PAYAL,<br>
+I LOVE YOU ❤️
+<p style="font-size:15px">
+You are my favorite notification.
+</p>
+</div>
+
+</div>
+
+<script>
+const messages = [
+"Searching the universe...",
+"Scanning 8 billion hearts...",
+"Analyzing heart signals...",
+"One name detected...",
+"Identity: PAYAL",
+"Final result loading..."
+];
+
+function startLove() {
+    let i = 0;
+
+    document.getElementById("btn").style.display = "none";
+
+    function scan() {
+        if (i < messages.length) {
+            document.getElementById("message").innerHTML =
+            "> " + messages[i];
+
+            i++;
+            setTimeout(scan, 1300);
+        } else {
+            document.getElementById("message").style.display = "none";
+            document.getElementById("final").style.display = "block";
+        }
+    }
+
+    scan();
+}
+</script>
+
+</body>
+</html>
